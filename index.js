@@ -2,6 +2,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import {
+	browserHistory,
 	hashHistory,
 	IndexRoute,
 	Route,
@@ -18,7 +19,7 @@ import Repos from './modules/Repos';
 
 // Build router
 const router = (
-	<Router history={hashHistory} >
+	<Router history={browserHistory} >
 		<Route path="/" component={App}>
 
 			<IndexRoute component={Home} />

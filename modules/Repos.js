@@ -7,7 +7,6 @@ import NavLink from './NavLink';
 
 const repoStyle = {
 	color: 'goldenrod',
-	fontSize: 36,
 };
 
 
@@ -15,7 +14,7 @@ export default React.createClass({
 	render() {
 		return(
 			<div style={repoStyle}>
-				<h2>Repos</h2>
+				<h2>REPOS</h2>
 
 				<ul>
 					<li><NavLink to="/repos/reactjs/react-router">React Router</NavLink></li>
