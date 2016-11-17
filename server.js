@@ -1,14 +1,19 @@
 var express = require('express');
 var path = require('path');
 
+var compression = require('compression');
+
 var app = express();
 
-// serve our static stuff like index.css
-app.use(express.static(__dirname,));
+// use compression
+app.use(compression());
 
-// send all requests to index.html so browserHistory in React Router works
+// serve our static stuff from the public directory
+app.use(express.static(__dirname, 'public'));
+
+// send all requests to public/index.html so browserHistory in React Router works
 app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname, 'index.html'))
+	res.sendFile(path.join(__dirname, 'public', 'index.html'))
 });
 
 var PORT = process.env.PORT || 8080;
